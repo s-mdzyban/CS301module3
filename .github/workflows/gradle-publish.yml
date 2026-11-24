@@ -44,5 +44,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: project-jar-artifact
-        path: '**/build/libs/*.jar'
+        path: '**/build/**/*.jar'
         if-no-files-found: error                 # Fails if no JAR file is found
