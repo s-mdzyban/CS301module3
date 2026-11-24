@@ -39,3 +39,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
+# NEW Upload the generated JAR file as a workflow artifact
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: project-jar-artifact
+        path: '**/build/libs/*.jar'
+        if-no-files-found: error                 # Fails if no JAR file is found
